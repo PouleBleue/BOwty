@@ -35,8 +35,8 @@ client.on("guildMemberRemove", member => {
 });
 const activities_list = [
     "0.1.2.1.", 
-    "Je lis mon code",
-    "Je vais explosé", 
+    "lire son code",
+    "b!help", 
     "Made with JavaScript"
     ]
 client.on('ready', () => {
