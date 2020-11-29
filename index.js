@@ -33,11 +33,18 @@ client.on("guildMemberRemove", member => {
     member.send("Rip, Tu as quitté le serveur, mais pourquoi ?!")
     welcome.send(`${member} a quitté le serveur, c'est beaucoup trop triste !`)
 });
-
+const activities_list = [
+    "0.1.2.1.", 
+    "Je lis mon code",
+    "Je vais explosé", 
+    "Made with JavaScript"
+    ]
 client.on('ready', () => {
     console.log('Je dois dire : Olivia est conne !');
-    const number = client.users.cache.size
-    client.user.setActivity(`?!`, {type: "PLAYING"})
+    setInterval(() => {
+        const index = Math.floor(Math.random() * (activities_list.length - 1) + 1); 
+        client.user.setActivity(activities_list[index]);
+    }, 10000); 
 });
  
 
