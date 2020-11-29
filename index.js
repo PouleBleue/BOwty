@@ -37,7 +37,7 @@ client.on("guildMemberRemove", member => {
 client.on('ready', () => {
     console.log('Je dois dire : Olivia est conne !');
     const number = client.users.cache.size
-    client.user.setActivity(`${number} utilisateurs || b0.1.2.1 || b!help`, {type: "PLAYING"})
+    client.user.setActivity(`?!`, {type: "PLAYING"})
 });
  
 
