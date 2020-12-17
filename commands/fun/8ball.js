@@ -16,6 +16,8 @@ module.exports.run = (message, args) => {
             .addField("Question:", XD)
             .addField("Réponse:", MDR)
             message.channel.send(embed)
+                
+                        if(message.author == "Jérémy est un gamin ?") return message.channel.send("Oui")
 
         }
 
