@@ -40,14 +40,6 @@ const activities_list = [
     "b!help", 
     "Made with JavaScript"
     ]
-client.on('ready', () => {
-    console.log('Je dois dire : Olivia est conne !');
-    setInterval(() => {
-        const index = Math.floor(Math.random() * (activities_list.length - 1) + 1); 
-        client.user.setActivity(activities_list[index]);
-    }, 10000); 
-});
-
 
 client.on("messageReactionAdd", async(reaction, user) => {
     if(reaction.message.partial) await reaction.message.fetch();
@@ -61,7 +53,16 @@ client.on("messageReactionAdd", async(reaction, user) => {
         }
 
     }
-}).
+});
+
+client.on('ready', () => {
+    console.log('Je dois dire : Olivia est conne !');
+    setInterval(() => {
+        const index = Math.floor(Math.random() * (activities_list.length - 1) + 1); 
+        client.user.setActivity(activities_list[index]);
+    }, 10000); 
+});
+
  
 
 client.on("message", message => {
