@@ -32,6 +32,7 @@ client.on("guildMemberRemove", member => {
     if(!welcome) return;
     member.send("Rip, Tu as quitté le serveur, mais pourquoi ?!")
     welcome.send(`${member} a quitté le serveur, c'est beaucoup trop triste !`)
+    
 });
 const activities_list = [
     "0.1.2.1.", 
@@ -46,6 +47,21 @@ client.on('ready', () => {
         client.user.setActivity(activities_list[index]);
     }, 10000); 
 });
+
+
+client.on("messageReactionAdd", async(reaction, user) => {
+    if(reaction.message.partial) await reaction.message.fetch();
+    if(reaction.partial) await reaction.fetch();
+    if(user.bot) return;
+    if(!reaction.message.guild) return;
+    if(reaction.message.id === "789159543137107979"){
+        if(reaction.emoji.name === ":white_check_mark:") {
+            await reaction.message.guild.members.cache.get(user.id).roles.add("789150938312736790")
+            user.send("OMG! tu as reçu un rôle OMGGGGGGGGGGGGGG")
+        }
+
+    }
+}).
  
 
 client.on("message", message => {
