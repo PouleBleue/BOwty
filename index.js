@@ -41,17 +41,14 @@ const activities_list = [
     "Made with JavaScript"
     ]
 
-client.on("messageReactionAdd", async(reaction, user) => {
-    if(reaction.message.partial) await reaction.message.fetch();
-    if(reaction.partial) await reaction.fetch();
+client.on("messageReactionAdd", (reaction, user) => {
     if(user.bot) return;
-    if(!reaction.message.guild) return;
-    if(reaction.message.id === "789159543137107979"){
-        if(reaction.emoji.name === "✅") {
-            await reaction.message.guild.members.cache.get(user.id).roles.add("789150938312736790")
-            user.send("OMG! tu as reçu un rôle OMGGGGGGGGGGGGGG")
-        }
 
+    if(reaction.message.id === "789159543137107979"){
+        if(reaction.emoji.name === "white_check_mark") {
+            var member = reaction.message.guild.members.cache.find(member => member.id === user.id);
+            member.roles.add("789150938312736790")
+        }
     }
 });
             
