@@ -39,6 +39,6 @@ module.exports.run = async (message, args) => {
     }, ms(mutetime));
   }
 module.exports.help = {
-    name: "mute",
+    name: "tmute",
     description: "owo"
 }
