@@ -2,18 +2,15 @@ const Discord = require("discord.js");
 const client = new Discord.Client()
 
 module.exports.run = (message, args) => {
-    const VoiceChannel = message.member.voice.channel;
+        if(message.member.voice.channel){
+        message.member.voice.channel.join().then(connection => {
 
-    if(!VoiceChannel) {
-        const player = client.music.players.spawn({
-            guild: message.guild,
-            VoiceChannel: VoiceChannel,
-            textChannel: message.channel,
+        }).catch(err => {
+            message.reply("Je n'ai pas pu me connecté au salon vocal!")
         });
-
-        if(!client.musicPlayer.get(message.guild.id)) return client.musicPlayer.set(message.guild.id, player);
-    } else {
-        message.channel.send("Merci de rejoindre un salon vocal")
+    }
+    else {
+        message.reply("Vous n'êtes pas connecté en vocal")
     }
 }
 
