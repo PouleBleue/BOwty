@@ -1,5 +1,5 @@
 module.exports.run = (message, args) => {
-    let person =  message.guild.members.cache.get(message, args[0]);
+    let person =  message.guild.member(message.mentions.users.first() || message.guild.members.cache.get(args[0]));
 
     if (!person || message.author.id === person.id) {
         person = message.guild.members
