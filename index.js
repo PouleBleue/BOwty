@@ -42,15 +42,27 @@ const activities_list = [
     ]
 
 client.on("messageReactionAdd", (reaction, user) => {
-    if(user.bot) return;
-
-    if(reaction.message.id === "789159543137107979"){
-        if(reaction.emoji.name === "white_check_mark") {
-            var member = reaction.message.guild.members.cache.find(member => member.id === user.id);
-            member.roles.add("789150938312736790")
-        }
+    if(reaction.emoji.name === '✅') {
+        if(user.bot) return;
+        const guildMember = reaction.message.guild.members.cache.get(user.id);
+        const role = reaction.message.guild.roles.cache.find(r => r.name === "Membres")
+        if(!role) return reaction.message.channel.send("Le rôle membre n'est pas là")
+        if(!guildMember) return;
+        guildMember.roles.add(role.id)
     }
 });
+
+client.on("messageReactionRemove", (reaction, user) => {
+    if(reaction.emoji.name === '✅') {
+        if(user.bot) return;
+        const guildMember = reaction.message.guild.members.cache.get(user.id);
+        const role = reaction.message.guild.roles.cache.find(r => r.name === "Membres")
+        if(!role) return reaction.message.channel.send("Le rôle membre n'est pas là")
+        if(!guildMember) return;
+        guildMember.roles.remove(role.id)
+    }
+});
+
             
 
 client.on('ready', () => {
