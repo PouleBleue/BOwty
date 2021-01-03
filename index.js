@@ -21,14 +21,14 @@ const loadCommands = (dir = "./commands/") => {
 loadCommands();
 
 client.on("guildMemberAdd", member => {
-    const welcome = member.guild.channels.cache.find(welcome => welcome.name === "bienvenue")
+    const welcome = member.guild.channels.cache.find(welcome => welcome.name === "〢・😎・》bienvenue")
     if(!welcome) return;
     member.send(`Salut, ${member} sois le Bienvenue dans le serveur de PouleBleue qui est mon créateur, je suis un bot en developpement`)
     welcome.send(`Bienvenue ${member} dans le Royaume des bob-omb!`)
 });
 
 client.on("guildMemberRemove", member => {
-    const welcome = member.guild.channels.cache.find(welcome => welcome.name === "bienvenue")
+    const welcome = member.guild.channels.cache.find(welcome => welcome.name === "〢・😎・》bienvenue")
     if(!welcome) return;
     member.send("Rip, Tu as quitté le serveur, mais pourquoi ?!")
     welcome.send(`${member} a quitté le serveur, c'est beaucoup trop triste !`)
