@@ -10,8 +10,8 @@ module.exports.run = (message, args) => {
     .setTitle(`Information sur le serveur : ${guild.name}`)
     .addField("ID du serveur: ", `${guild.id}`)
     .addField("Owner du serveur:", `${guild.owner.user.tag}`)
-    .addField("Roles", `${guild.roles.cache.size}`)
-    .addField("Nombre de membres", `${guild.memberCount}`)
+    .addField("Roles:", `${guild.roles.cache.size}`)
+    .addField("Nombre de membres:", `${guild.memberCount}`)
     .addField("Crée le:", `${moment(guild.createdAt).format("DD/MM/YYYY")}`)
     message.channel.send(embed);
     
