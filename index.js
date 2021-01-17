@@ -77,7 +77,7 @@ client.on('ready', () => {
 
 client.on("message", message => {
     if(message.author.bot) return;
-    if(message.channel.type === 'dm') return message.channel.send("MDR");
+    if(message.channel.type === 'dm') return;
 
     if(!message.content.startsWith(prefix) || message.author.bot) return;
 
