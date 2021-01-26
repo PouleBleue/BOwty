@@ -18,10 +18,10 @@ module.exports.run = (message, args) => {
             message.reply(`Tu as mentionné personne !`)
         }
         let embed = new Discord.MessageEmbed()
-        .setTitle(`${message.author.username} slap ${user.username}`)
+        .setDescription(`**${message.author.username} a giflé **${user.username}**`)
         .setColor("RANDOM")
         .setImage(random)
-        .setFooter(`${message.author.username} | b!help`)
+        .setTimestamp()
         message.channel.send(embed)
 }
 
