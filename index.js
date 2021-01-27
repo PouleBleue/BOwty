@@ -67,10 +67,9 @@ client.on("messageReactionRemove", (reaction, user) => {
 
 client.on('ready', () => {
     console.log('Je dois dire : Olivia est conne !');
-    setInterval(() => {
-        const index = Math.floor(Math.random() * (activities_list.length - 1) + 1); 
-        client.user.setActivity(activities_list[index]);
-    }, 10000); 
+    const number = client.users.cache.size
+    const server = client.guilds.cache.size
+    client.user.setActivity(`${server} serveurs et à ${number} utilisateurs || b0.1.6.1 || b!help`, { type: "PLAYING" })
 });
 
  
