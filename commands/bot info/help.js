@@ -1,8 +1,15 @@
 const Discord = require("discord.js");
+const { MessageEmbed } = require("discord.js")
 
 module.exports.run = (message, args) => {
-    message.channel.send("**__Liste des commandes :__** ```\n-b!serverinfo \n-b!fox \n-b!nuke \n-b!join \n-b!leave \n-b!demute \n-b!tmute \n-b!trigger \n-b!mute \n-b!dm \n-b!help : affiche ce message \n-b!warn \n-b!botinfo \n-b!qi \n-b!work \n-b!balance \n-b!daily  \n-b!dog \n-b!say \n-b!userinfo \n-b!hug \n-b!slap \n-b!cat \n-b!pfc (Pierre, Feuille, Ciseaux) \n-b!credit \n-b!avatar \n-b!ping : Commande de test \n-b!clear : Le bot efface les messages \n-b!8ball \n-b!kick \n-b!ban \n-b!meme```")
-
+    const embed = new MessageEmbed()
+    .setTitle("Liste des commandes: (prefix : n!)")
+    .addField("Modération:", "`Ban`,`Kick`, `clear`, `mute`, `nuke`, `tmute`, `warn`, `dm`")
+    .addField("Economie (En bêta) ", "`daily`, `balance`, `work`" )
+    .addField("Fun:", "`8ball`, `cat`, `dog`, `fox`, `hug`, `meme`, `pfc`, `qi`, `random`, `say`, `slap`, `trigger`")
+    .addField("Bot info :", "`avatar`, `botinfo`, `help`, `ping`, `serverinfo`, `userinfo`")
+    .setColor("#0000FF")
+    message.channel.send(embed)
 }
 
 module.exports.help = {
