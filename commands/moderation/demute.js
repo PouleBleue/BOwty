@@ -31,6 +31,6 @@ module.exports.run = async (message, args) => {
 
 
 module.exports.help = {
-    name: "demute",
+    name: "unmute",
     description: "owo"
 }
