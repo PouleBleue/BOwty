@@ -1,23 +1,35 @@
 const Discord = require("discord.js");
 
 module.exports.run = (message, args) => {
-    let reponse = args.slice(0).join(" ");
-    if (!reponse) return message.channel.send("Tu dois choisir Pierre, Feuille, Ciseaux")
+    const acceptedReplies = ['Pierre', 'Feuille', 'Ciseaux'];
+        const random = Math.floor((Math.random() * acceptedReplies.length));
+        const result = acceptedReplies[random];
 
-    let taReponse = ["Pierre", "Feuille", "Ciseaux"]
-
-    let resultat = taReponse[Math.floor(Math.random() * taReponse.length)];
-
-    if (!taReponse.includes(reponse)) {
-        return message.channel.send(`Les seules reponses qui sont accepté sont Pierre, Feuille, Ciseaux`)
-    };
-    let embed = new Discord.MessageEmbed()
-        .setTitle("Pierre, Feuille, Ciseaux")
-        .addField("Ton choix :", reponse)
-        .addField("Mon choix :", resultat)
-    message.channel.send(embed)
-
-};
+        const choice = args[0];
+        if (!choice) return message.channel.send(`Comment jouer: \`b!pfc <Pierre|Feuille|Ciseaux>\``);
+        if (!acceptedReplies.includes(choice)) return message.channel.send(`Les seules réponses acceptés sont : \`${acceptedReplies.join(', ')}\``);
+        
+        console.log('Bot Result:', result);
+        if (result === choice) return message.reply("Quel dommage, on a fais le même choix.");
+        
+        switch (choice) {
+            case 'Pierre': {
+                if (result === 'Feuille') return message.reply(`J'ai gagné ! j'ai choisi ${result}`);
+                else return message.reply(`Tu as gagné ! J'ai choisis ${result}`);
+            }
+            case 'Feuille': {
+                if (result === 'Ciseaux') return message.reply(`J'ai gagné ! j'ai choisi ${result}`);
+                else return message.reply(`Tu as gagné ! J'ai choisi ${result}`);        
+            }
+            case 'Ciseaux': {
+                if (result === 'Pierre') return message.reply(`J'ai gagné ! J'ai choisi ${result}`);
+                else return message.reply(`Tu as gagné ! J'ai choisi ${result}`);
+            }
+            default: {
+                return message.channel.send(`Les seules réponse accepté sont : \`${acceptedReplies.join(', ')}\``);
+            }
+        }
+    }
 
 module.exports.help = {
     name: "pfc",
