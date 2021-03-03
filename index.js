@@ -41,30 +41,6 @@ const activities_list = [
     "Made with JavaScript"
     ]
 
-client.on("messageReactionAdd", (reaction, user) => {
-    if(reaction.emoji.name === '✅') {
-        if(user.bot) return;
-        const guildMember = reaction.message.guild.members.cache.get(user.id);
-        const role = reaction.message.guild.roles.cache.find(r => r.name === "Membres")
-        if(!role) return reaction.message.channel.send("Le rôle membre n'est pas là")
-        if(!guildMember) return;
-        guildMember.roles.add(role.id)
-    }
-});
-
-client.on("messageReactionRemove", (reaction, user) => {
-    if(reaction.emoji.name === '✅') {
-        if(user.bot) return;
-        const guildMember = reaction.message.guild.members.cache.get(user.id);
-        const role = reaction.message.guild.roles.cache.find(r => r.name === "Membres")
-        if(!role) return reaction.message.channel.send("Le rôle membre n'est pas là")
-        if(!guildMember) return;
-        guildMember.roles.remove(role.id)
-    }
-});
-
-            
-
 client.on('ready', () => {
     console.log('Je dois dire : Olivia est conne !');
     const number = client.users.cache.size
