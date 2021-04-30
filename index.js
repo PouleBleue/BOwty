@@ -1,5 +1,5 @@
 const Discord = require('discord.js');
-const client = const client = new Discord.Client({ ws: { properties: { $browser: "Discord iOS" }} });
+const client = new Discord.Client({ ws: { properties: { $browser: "Discord iOS" }} });
 const { prefix, token } = require("./config.json")
 const { readdirSync, fs  } = require('fs');
 
