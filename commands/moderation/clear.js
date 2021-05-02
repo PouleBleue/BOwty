@@ -14,7 +14,7 @@ module.exports.run = (message, args) => {
         }
     
         message.channel.bulkDelete(deleteAmount + 1, true);
-        message.reply(`**Tu as supprimé ${deleteAmount} Messages.**`)
+        message.reply(`**J'ai supprimé ${deleteAmount} messages.**`)
 }
 
 module.exports.help = {
