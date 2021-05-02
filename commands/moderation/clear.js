@@ -7,7 +7,7 @@ module.exports.run = (message, args) => {
     
         if (isNaN(args[0]) || parseInt(args[0]) <= 0) { return message.reply('Tu dois choisir un chiffre/nombre et que le nombre/chiffre choisis soit supérieur à 0 si tu veux que la commande fonctionne !') }
     
-        if (parseInt(args[0]) > 100) {
+        if (parseInt(args[0]) > 50) {
             return message.reply('Tu ne peux supprimé que 100 messages à la fois !')
         } else {
             deleteAmount = parseInt(args[0]);
