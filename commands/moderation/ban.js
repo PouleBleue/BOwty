@@ -1,12 +1,18 @@
 const Discord = require("discord.js");
 
-module.exports.run = (message, args) => {
+module.exports.run = async (message, args) => {
     const user = message.mentions.users.first();
+    let guild = message.guild;
+    const raison = args.join(" ").slice(22)
+    
+    user.send(`Tu as été bannis du serveur : ${guild.name} par ${message.author} pour la raison ${raison}`)
+
+
       if (user === message.author) return message.channel.send("Tu ne peux pas te bannir toi même ! ")
         if (!message.member.permissions.has("MANAGE_MESSAGES")) return message.channel.send('Il te manque des permissions!');
         if (user) {
           const member = message.guild.member(user);
-          const raison = args.join(" ").slice(22)
+         
          
           if(!raison) return message.channel.send("Merci de mettre une raison")
           if (member) {
@@ -16,8 +22,8 @@ module.exports.run = (message, args) => {
                 const embed  = new Discord.MessageEmbed()
                 .setTitle("Ban")
                 .setColor("RANDOM")
-                .addField("Utilisateur bannis :", `${user.tag}`)
-                .addField("Bannis par :", `${message.author.tag}`)
+                .addField("Utilisateur banni :", `${user.tag}`)
+                .addField("Banni par :", `${message.author.tag}`)
                 .addField("Raison :", `${raison}`)
                 .setTimestamp()
                 message.channel.send(embed)
@@ -29,7 +35,7 @@ module.exports.run = (message, args) => {
             message.reply("Ce membre n'existe pas !");
           }
         } else {
-          message.reply("**Mais voyons, tu n'as mentionné personne pour ban**");
+          message.reply("**Mais voyons, tu as mentionné personne pour ban**");
         }
 }
 
