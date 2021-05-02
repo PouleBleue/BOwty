@@ -5,7 +5,7 @@ module.exports.run = async (message, args) => {
     let guild = message.guild;
     const raison = args.join(" ").slice(22)
     
-    user.send(`Tu as été bannis du serveur : ${guild.name} par ${message.author} pour la raison ${raison}`)
+   
 
 
       if (user === message.author) return message.channel.send("Tu ne peux pas te bannir toi même ! ")
@@ -27,6 +27,7 @@ module.exports.run = async (message, args) => {
                 .addField("Raison :", `${raison}`)
                 .setTimestamp()
                 message.channel.send(embed)
+                user.send(`Tu as été bannis du serveur : ${guild.name} par ${message.author} pour la raison ${raison}`)
               })
               .catch(err => {
                 message.reply("Je n'ai pas pu bannir ce membre");
