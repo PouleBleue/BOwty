@@ -16,6 +16,7 @@ module.exports.run = (message, args) => {
                 .setColor("#FF0000")
                 .addField("Utilisateur kick :", `${user.tag}`)
                 .addField("Kick par :", `${message.author.tag}`)
+                .addField("Raison :", raison)
                 .setTimestamp()
                 message.channel.send(embed)
               })
