@@ -7,7 +7,7 @@ module.exports.run = (message, args) => {
     .addField("Créateur du bot :", `PouleBleue`)
     .addField("Bot crée :", `Le 18 octobre 2020`)
     .addField("Nombre total de personnes :", message.client.users.cache.size)
-    .addField("Nombre total de serveur :", message.client.guilds.cache.size)
+    .addField("Nombre total de serveurs :", message.client.guilds.cache.size)
     .addField("Version bêta :", `Version : 0.1.8.0`)
     .setTimestamp()
 message.channel.send(binfo_embed)
