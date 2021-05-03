@@ -14,7 +14,7 @@ module.exports.run = async (message, args) => {
             db.add(`money_${message.guild.id}_${user.id}`, amount)
             db.set(`worked_${message.guild.id}_${user.id}`, Date.now())
 
-            message.channel.send(`${user}, Ton travail t'as fais remporté ${amount} pièces d'or`)
+            message.channel.send(`${user}, Ton travail t'as fait remporter ${amount} pièces d'or`)
 }
 }
 
