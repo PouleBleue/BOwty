@@ -2,7 +2,7 @@ const Discord = require("discord.js")
 
 module.exports.run = (message, args) => {
     var jérémKO = args.join(" ")
-    var test = ["Y'a pas de commande TEST, oui c'est beaucoup trop triste, mais bon fallais pas être aussi bête pour croire que y'aurais une commande test mdr", "Désolé pour toi mais y'a pas de commande de test"]
+    var test = ["Y'a pas de commande TEST, oui c'est beaucoup trop triste, mais bon fallait pas être aussi bête pour croire que y'aurait une commande test mdr", "Désolé pour toi mais y'a pas de commande de test"]
     
     var mdr = test[Math.floor(Math.random() * test.length)];
 
