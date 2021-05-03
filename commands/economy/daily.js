@@ -11,7 +11,7 @@ module.exports.run = async (message, args) => {
     if (daily !== null && timeout - (Date.now() - daily) > 0) {
         let time = ms(timeout - (Date.now() - daily));
 
-        return message.channel.send(`Tu as déjà reçu ton argent quotidient, reviens dans ${time.hours}h, ${time.minutes}m, et ${time.seconds}s`)
+        return message.channel.send(`Tu as déjà reçu ton argent quotidien, reviens dans ${time.hours}h, ${time.minutes}m, et ${time.seconds}s`)
     } else {
         db.add(`money_${message.guild.id}_${user.id}`, amount);
         db.set(`daily_${message.guild.id}_${user.id}`, Date.now());
