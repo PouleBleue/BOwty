@@ -8,7 +8,7 @@ module.exports.run = (message, args) => {
     .addField("Bot crée :", `Le 18 octobre 2020`)
     .addField("Nombre total d'utilisateur :", message.client.users.cache.size)
     .addField("Nombre total de serveurs :", message.client.guilds.cache.size)
-    .addField("Version bêta :", `Version : b0.1.9.2`)
+    .addField("Version gamma :", `Version : g1.0.0`)
     .addField("Version de discord.js :", "12.5.1")
     .setTimestamp()
 message.channel.send(binfo_embed)
