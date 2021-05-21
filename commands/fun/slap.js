@@ -1,4 +1,5 @@
 const Discord = require("discord.js")
+const client = new Discord.Client();
 module.exports.run = (message, args) => {
     let hug = [
         "https://media.discordapp.net/attachments/669682722641281030/693039173749440541/tenor_1.gif",
@@ -15,8 +16,14 @@ module.exports.run = (message, args) => {
 
         let user = message.mentions.users.first()
         if(!user){
-            message.reply(`Tu as mentionné personne !`)
+            let embed = new Discord.MessageEmbed()
+            .setTitle(`${message.author.username} slap ${message.client.user.username}`)
+            .setColor("RANDOM")
+            .setImage(random)
+            .setFooter(`${message.author.username} | b!help`)
+            message.channel.send(embed)
         }
+
         let embed = new Discord.MessageEmbed()
         .setTitle(`${message.author.username} slap ${user.username}`)
         .setColor("RANDOM")
