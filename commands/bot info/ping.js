@@ -4,8 +4,6 @@ module.exports.run = (message, args) => {
     
     const ping = new Discord.MessageEmbed()
     .setDescription(`🏓\`${Date.now() - message.createdTimestamp}\`ms`);
-
-
     message.channel.send(ping);
 }
 

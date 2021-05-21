@@ -34,7 +34,6 @@ module.exports.run = (message, args) => {
     .setImage(random)
     .setTimestamp()
     message.channel.send(embed);
-    
 }
 
 module.exports.help = {

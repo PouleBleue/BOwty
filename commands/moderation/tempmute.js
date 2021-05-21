@@ -9,11 +9,11 @@ module.exports.run = async (message, args) => {
   };
     let tomute = message.guild.member(message.mentions.users.first() || message.guild.members.cache.get(args[0]));
     if(!tomute) return message.reply("Je n'ai pas trouvé d'utilisateur !");
-    let guild = message.guild
+    let guild = message.guild;
     let user = message.mentions.users.first();
     if (user === message.author) return message.channel.send("Tu ne peux pas te mute toi même ! ")
     if(tomute.hasPermission("MANAGE_MESSAGES")) return message.reply("Il te manque des permissions");
-    let raison = args[2];
+    let raison = args.join(" ").slice(5);
     let mutetime = args[1];
     if(!mutetime) return message.reply("Il faut que tu dises le temps exact pendant lequel l'utilisateur choisi sera mute !");
     if(!raison) return message.channel.send("Merci de mettre une raison !");
@@ -40,6 +40,7 @@ module.exports.run = async (message, args) => {
       message.channel.send(`<@${tomute.id}> a été unmute!`);
     }, ms(mutetime));
   }
+  
 module.exports.help = {
     name: "tmute",
     description: "owo"

@@ -18,8 +18,9 @@ module.exports.run = async (message, args) => {
         embed.setFooter(`👍 ${memeUpvotes} 💬 ${memeNumComments}`);
         message.channel.send(embed)
     }).catch(console.error);
-
 }
+
+
 
 module.exports.help = {
     name: "meme",

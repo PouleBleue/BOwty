@@ -23,8 +23,9 @@ module.exports.run = async (message, args) => {
     .addField("Mute par :", `${message.author.username}`)
     .addField("Raison :", `${raison}`)
     message.channel.send(embed)
+}
 
-    }
+    
 module.exports.help = {
     name: "mute",
     description: "owo"

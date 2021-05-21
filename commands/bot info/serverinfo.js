@@ -7,18 +7,18 @@ module.exports.run = (message, args) => {
 
     const embed = new MessageEmbed()
     .setColor("RANDOM")
-    .setThumbnail(guild.iconURL())
+    .setThumbnail(guild.iconURL({dynamic: true}))
     .setTitle(`Information sur le serveur : ${guild.name}`)
     .addField("ID du serveur: ", `${guild.id}`)
     .addField("Owner du serveur:", `${guild.owner.user.tag}`)
-    .addField("Roles:", `${guild.roles.cache.size}`)
+    .addField("Rôles:", `${guild.roles.cache.size}`)
     .addField("Emojis:", `${guild.emojis.cache.size}`)
     .addField("Nombre total de membres:", `${guild.memberCount}`)
     .addField("Nombre de total de bots:", `${guild.members.cache.filter(member => member.user.bot).size}`, true)
     .addField("Nombre total d'humains:", `${guild.members.cache.filter(member => !member.user.bot).size}`)
-    .addField("Crée le:", `${moment(guild.createdAt).format("DD/MM/YYYY")}`)
+    .addField("Nombre de salons:", `${guild.channels.cache.size}`)
+    .addField("Crée le:", `${moment(message.guild.createdAt).format('[Le] DD/MM/YYYY [à] HH:mm:ss')}`)
     message.channel.send(embed);
-    
 }
 
 module.exports.help = {

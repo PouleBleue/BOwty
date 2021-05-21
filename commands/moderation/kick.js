@@ -30,7 +30,7 @@ module.exports.run = (message, args) => {
         } else {
           message.reply("**Mais voyons, tu n'as mentionné personne pour kick**");
         }
-}
+      }
 
 module.exports.help = {
     name: "kick",

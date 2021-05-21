@@ -24,7 +24,8 @@ module.exports.run = async (message, args) => {
         }
     }
     if(muterole) return message.channel.send("Le rôle mute a déjà été crée.")
-}
+  }
+
 
 module.exports.help = {
     name: "configmute"

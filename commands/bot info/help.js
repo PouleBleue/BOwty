@@ -1,15 +1,14 @@
 const Discord = require("discord.js");
 const { MessageEmbed } = require("discord.js")
 
-module.exports.run = (message, args) => {
-    const embed = new MessageEmbed()
-    .setTitle("Liste des commandes: (prefix : b!)")
-    .addField("Modération:", "`Ban`,`Kick`, `clear`, `mute`, `nuke`, `tmute`, `configmute`, `dm`")
-    .addField("Economie (En bêta) ", "`daily`, `balance`, `work`" )
-    .addField("Fun:", "`8ball`, `cry`, `wasted`, `crandom`, `cat`, `dog`, `fox`, `hug`, `meme`, `pfc`, `qi`, `random`, `say`, `slap`, `trigger`, `wast`")
-    .addField("Bot info :", "`avatar`, `botinfo`, `help`, `ping`, `serverinfo`, `userinfo`")
-    .setColor("#0000FF")
-    message.channel.send(embed)
+module.exports.run = async (message, args) => {
+    const owo = new Discord.MessageEmbed()
+        .setTitle("Liste des commandes: (prefix : b!)")
+        .addField("Modération:", "`Ban`,`Kick`, `clear`, `mute`, `nuke`, `tmute`, `dm`, `unban`")
+        .addField("Fun:", "`8ball`, `cry`, `wasted`, `crandom`, `cat`, `dog`, `fox`, `hug`, `meme`, `pfc`, `qi`, `say`, `slap`, `trigger`, `rip`, `inverse`, `facepalm`, `emojify`, `baka`")
+        .addField("Bot info :", "`avatar`, `botinfo`, `help`, `ping`, `serverinfo`, `userinfo`, `roleinfo`")
+        .setColor("#0000FF")
+        message.channel.send(owo)
 }
 
 module.exports.help = {
