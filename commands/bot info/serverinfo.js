@@ -14,9 +14,9 @@ module.exports.run = (message, args) => {
     .addField("Rôles:", `${guild.roles.cache.size}`)
     .addField("Emojis:", `${guild.emojis.cache.size}`)
     .addField("Nombre total de membres:", `${guild.memberCount}`)
-    .addField("Nombre de total de bots:", `${guild.members.cache.filter(member => member.user.bot).size}`, true)
+    .addField("Nombre total de bots:", `${guild.members.cache.filter(member => member.user.bot).size}`, true)
     .addField("Nombre total d'humains:", `${guild.members.cache.filter(member => !member.user.bot).size}`)
-    .addField("Nombre de salons:", `${guild.channels.cache.size}`)
+    .addField("Nombre total de salons:", `${guild.channels.cache.size}`)
     .addField("Crée le:", `${moment(message.guild.createdAt).format('[Le] DD/MM/YYYY [à] HH:mm:ss')}`)
     message.channel.send(embed);
 }
