@@ -47,14 +47,14 @@ module.exports.run = async (message, args) => {
         let user = message.mentions.users.first() 
         if(!user){
             let embed = new Discord.MessageEmbed()
-            .setTitle(`${message.author.username} a fais un câlin à ${message.client.user.username}.`)
+            .setTitle(`${message.author.username} a fait un câlin à ${message.client.user.username}.`)
             .setColor("RANDOM")
             .setImage(random)
             .setFooter(`${message.author.username} | b!help`)
             message.channel.send(embed)
         } 
         let embed = new Discord.MessageEmbed()
-        .setTitle(`${message.author.username} a fais un câlin à ${user.username}.`)
+        .setTitle(`${message.author.username} a fait un câlin à ${user.username}.`)
         .setColor("RANDOM")
         .setImage(random)
         .setFooter(`${message.author.username} | b!help`)
