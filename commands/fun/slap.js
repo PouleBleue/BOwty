@@ -17,7 +17,7 @@ module.exports.run = (message, args) => {
         let user = message.mentions.users.first()
         if(!user){
             let embed = new Discord.MessageEmbed()
-            .setTitle(`${message.author.username} slap ${message.client.user.username}`)
+            .setDescription(`**${message.author.username}** slaps **${message.client.user.username}**`)
             .setColor("RANDOM")
             .setImage(random)
             .setFooter(`${message.author.username} | b!help`)
@@ -25,7 +25,7 @@ module.exports.run = (message, args) => {
         }
 
         let embed = new Discord.MessageEmbed()
-        .setTitle(`${message.author.username} slap ${user.username}`)
+        .setDescription(`**${message.author.username}** slaps **${user.username}**`)
         .setColor("RANDOM")
         .setImage(random)
         .setFooter(`${message.author.username} | b!help`)
