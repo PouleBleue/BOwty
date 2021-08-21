@@ -30,7 +30,7 @@ module.exports.run = (message, args) => {
 
     const embed = new Discord.MessageEmbed()
     .setColor("#FF0000")
-    .setDescription(`**${message.author.username}** est entrain de pleurer...`)
+    .setDescription(`**${message.author.username}** est en train de pleuré...`)
     .setImage(random)
     .setTimestamp()
     message.channel.send(embed);
