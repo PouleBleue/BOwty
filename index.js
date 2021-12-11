@@ -39,7 +39,7 @@ client.on('ready', () => {
     console.log('Je dois dire : Olivia est conne !');
     const number = client.users.cache.size
     const server = client.guilds.cache.size
-    client.user.setActivity(`g1.0.2 || ${server} serveurs et à ${number} utilisateurs ||  b!help`, { type: "PLAYING" })
+    client.user.setActivity(`g1.0.3 || ${server} serveurs et à ${number} utilisateurs ||  b!help`, { type: "PLAYING" })
 });
 
  
